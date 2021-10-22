@@ -109,6 +109,7 @@ const paintToggle = () => {
     ctx.moveTo(i*TILE_WIDTH, 0);
     ctx.lineTo(i*TILE_WIDTH, TOGGLE_ROWS*TILE_HEIGHT);
   }
+  ctx.stroke();
 
 
   // populate the toggle pane's text using ctx.fillText(). Reference
