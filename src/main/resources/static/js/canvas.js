@@ -1,6 +1,6 @@
 // TODO: set the number of rows and cols in the toggle pane
-const TOGGLE_ROWS = ?;
-const TOGGLE_COLS = ?;
+const TOGGLE_ROWS = 2;
+const TOGGLE_COLS = 3;
 
 // set the pixel size of each tile
 const TILE_HEIGHT = 50;
@@ -30,11 +30,11 @@ $(document).ready(() => {
   // TODO: set the width and height of canvas
   // hint -- use the globally defined TOGGLE_ROWS, TOGGLE_COLS,
   //         TILE_HEIGHT, TILE_WIDTH
-  canvas.width = ?;
-  canvas.height = ?;
+  canvas.width = TOGGLE_COLS*TILE_WIDTH;
+  canvas.height = TOGGLE_ROWS*TILE_HEIGHT;
 
   // TODO: set up the canvas context
-
+  ctx = canvas.getContext("2d");
   // paints the toggle pane
   paintToggle();
 
