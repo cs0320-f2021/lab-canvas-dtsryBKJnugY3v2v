@@ -40,8 +40,7 @@ $(document).ready(() => {
 
   // TODO: add a click handler for when the user clicks the canvas element
   // with id 'toggle'. Have it call the function 'paintOnClick'.
-
-
+  canvas.addEventListener('click', paintOnClick);
   // click handler for the submit button
   $('#submit').click(submitSelection);
 
@@ -93,12 +92,23 @@ const paintToggle = () => {
 
   // TODO: fill the background color of the canvas element to
   // something other than white using ctx.fillStyle() and ctx.fillRect()
+  ctx.fillRect(75, 70, 100, 57);
 
 
   // TODO: draw the grid lines for the toggle pane using ctx.beginPath()
   // and ctx.moveTo()
   // hint -- remember you have the fields TOGGLE_ROWS & TOGGLE_COLS, and
   //         TILE_HEIGHT & TILE_WIDTH, which will help you draw the lines
+  ctx.beginPath()
+  for (let i = 0; i < TOGGLE_ROWS; i++) {
+    ctx.moveTo(0, i*TILE_HEIGHT);
+    ctx.lineTo(TOGGLE_COLS*TILE_WIDTH, i*TILE_HEIGHT);
+
+  }
+  for (let i = 0; i < TOGGLE_COLS; i++) {
+    ctx.moveTo(i*TILE_WIDTH, 0);
+    ctx.lineTo(i*TILE_WIDTH, TOGGLE_ROWS*TILE_HEIGHT);
+  }
 
 
   // populate the toggle pane's text using ctx.fillText(). Reference
